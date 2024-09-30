@@ -1,0 +1,16 @@
+
+L
+java:S3740>"/Provide the parametrized type for this generic.(ª¹¯ê8Ÿ½•è¢2
+
+java:S1319%"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°¦¹8¡½•è¢2
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(êÙâãùÿÿÿÿ8Ü½•è¢2
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(æœº›ùÿÿÿÿ8İ½•è¢2
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ŠÚÒÃşÿÿÿÿ8İ½•è¢2
+c
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(êÙâãùÿÿÿÿ8ß½•è¢2
+c
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(ŠÚÒÃşÿÿÿÿ8à½•è¢2
+V
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(ÙŠ8å½•è¢2
+L	java:S106!"+Replace this use of System.out by a logger.(£­ªÿÿÿÿÿ8ç½•è¢2
+G	java:S1061"+Replace this use of System.err by a logger.(ºûıò8ë½•è¢2

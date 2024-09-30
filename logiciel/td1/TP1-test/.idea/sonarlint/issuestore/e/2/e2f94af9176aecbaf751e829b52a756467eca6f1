@@ -1,0 +1,22 @@
+
+k
+java:S3740;"/Provide the parametrized type for this generic.(ª¹¯êJ$ae0d729b-1864-4c92-a657-9904e25a05a1
+š
+java:S2293&"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ží‚þøÿÿÿÿJ$190c2961-08d4-4dab-9094-944572e6c1c1
+¬
+java:S1319%"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°¦¹J$f32a972d-1889-4bd7-8192-d2e401eb2b8e
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(êÙâãùÿÿÿÿ8±…½™¢2
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(æœº›ùÿÿÿÿ8²…½™¢2
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ŠÚÒÃþÿÿÿÿ8²…½™¢2
+c
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(êÙâãùÿÿÿÿ8³…½™¢2
+c
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(ŠÚÒÃþÿÿÿÿ8µ…½™¢2
+u
+java:S1854"9Remove this useless assignment to local variable "parse".(ƒÙÄ­J$ed33fec4-0d8e-4e95-95a9-8a1212fbf9e0
+€
+java:S1874"8Remove this use of "readFileToString"; it is deprecated.(¶ñƒÌüÿÿÿÿ8 ñ³™¢2J$6465c1ae-85b7-4d5c-a217-acb948eb33bb
+f	java:S106"+Replace this use of System.out by a logger.(žù§éJ$fab84e71-6580-4f2b-9394-1623d3e9ff5b
+f
+java:S1481"*Remove this unused "parse" local variable.(ƒÙÄ­J$bb2f3cae-2731-40ae-9a76-4ee692231778
+k	java:S106+"+Replace this use of System.out by a logger.(Ü¶ÍøûÿÿÿÿJ$95968cb7-bd53-44e1-9f63-89c038a58a45

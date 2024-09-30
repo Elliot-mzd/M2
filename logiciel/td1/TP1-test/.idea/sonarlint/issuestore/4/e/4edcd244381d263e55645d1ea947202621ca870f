@@ -1,0 +1,21 @@
+
+k
+java:S3740D"/Provide the parametrized type for this generic.(ª¹¯êJ$70f9c4ab-3e51-46db-879c-69de96871f8a
+š
+java:S2293/"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ží‚þøÿÿÿÿJ$a95654d2-bc7f-43e5-926b-f9aa35d117c6
+¬
+java:S1319."pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°¦¹J$0b583a18-f630-41a4-ab3b-beba24ba65c1
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(êÙâãùÿÿÿÿ8È–È™¢2
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(æœº›ùÿÿÿÿ8È–È™¢2
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ŠÚÒÃþÿÿÿÿ8È–È™¢2
+c
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(êÙâãùÿÿÿÿ8Ê–È™¢2
+‰
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(ŠÚÒÃþÿÿÿÿ8çéÀ™¢2J$6550b5cc-86fe-4cd0-938a-5de73d39434b
+€
+java:S1874"8Remove this use of "readFileToString"; it is deprecated.(¶ñƒÌüÿÿÿÿ8þ…Á™¢2J$b6c45d25-88fd-48cb-b9a9-7f9add526f64
+|	java:S125"<This block of commented-out lines of code should be removed.(´ªõÊøÿÿÿÿJ$34d1971c-c65b-42b7-af92-2704f73a9055
+|	java:S1254"<This block of commented-out lines of code should be removed.(Îã•®þÿÿÿÿJ$6f76a60e-0d9b-4b32-b0dd-0061aab93769
+k	java:S106X"+Replace this use of System.out by a logger.(¾üÒ¢ýÿÿÿÿJ$926639c4-deee-444e-a643-f3acecbfec12
+k	java:S106j"+Replace this use of System.out by a logger.(±§•åúÿÿÿÿJ$21eea42b-ad45-4491-a16a-cfe9a0fed225
+k	java:S106~"+Replace this use of System.out by a logger.(Å£çÓøÿÿÿÿJ$24bf7c57-b160-4c46-b0f5-e43c80d5fc35

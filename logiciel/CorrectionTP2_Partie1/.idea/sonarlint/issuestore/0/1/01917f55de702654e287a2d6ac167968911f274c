@@ -1,0 +1,20 @@
+
+E
+java:S3740M"/Provide the parametrized type for this generic.(ª¹¯ê
+t
+java:S22938"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ží‚þøÿÿÿÿ
+†
+java:S13197"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°¦¹
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(î¶õ§ûÿÿÿÿ
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ôÞûá
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¶êÄÃÿÿÿÿÿ
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÍÒŒì
+W
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(ôÞûá
+W
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(ÍÒŒì
+V	java:S125&"<This block of commented-out lines of code should be removed.(´ªõÊøÿÿÿÿ
+V	java:S125="<This block of commented-out lines of code should be removed.(Îã•®þÿÿÿÿ
+E	java:S106a"+Replace this use of System.out by a logger.(¾üÒ¢ýÿÿÿÿ
+E	java:S106s"+Replace this use of System.out by a logger.(±§•åúÿÿÿÿ
+F	java:S106‡"+Replace this use of System.out by a logger.(Å£çÓøÿÿÿÿ
