@@ -21,10 +21,10 @@ import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 
 public class Parser {
-	
-	public static final String projectPath = "C:\\Users\\zakarea.alshara\\osgi_workspace\\projectToParse";
-	public static final String projectSourcePath = projectPath + "\\src";
-	public static final String jrePath = "C:\\Program Files\\Java\\jre1.8.0_51\\lib\\rt.jar";
+
+	public static final String projectPath = "/home/e20190006130/Documents/M2/logiciel/td1/TP1-test/";
+	public static final String projectSourcePath = projectPath + "/src";
+	public static final String jrePath = "/home/e20190006130/.jdks/corretto-18.0.2";
 
 	public static void main(String[] args) throws IOException {
 

@@ -1,16 +1,33 @@
 
 L
-java:S3740>"/Provide the parametrized type for this generic.(ª¹¯ê8Ÿ½•è¢2
-
-java:S1319%"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°¦¹8¡½•è¢2
-{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(êÙâãùÿÿÿÿ8Ü½•è¢2
-{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(æœº›ùÿÿÿÿ8İ½•è¢2
-{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ŠÚÒÃşÿÿÿÿ8İ½•è¢2
+java:S3740r"/Provide the parametrized type for this generic.(ª¹¯ê8¿Ëü·¤2
+’
+java:S1319Y"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ü¥Âöüÿÿÿÿ8ÂËü·¤2
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(êÙâãùÿÿÿÿ8ÉÌü·¤2
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(æœº›ùÿÿÿÿ8ÉÌü·¤2
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ŠÚÒÃşÿÿÿÿ8ÊÌü·¤2
 c
-java:S1075"ARefactor your code to get this URI from a customizable parameter.(êÙâãùÿÿÿÿ8ß½•è¢2
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(êÙâãùÿÿÿÿ8ÍÌü·¤2
 c
-java:S1075"ARefactor your code to get this URI from a customizable parameter.(ŠÚÒÃşÿÿÿÿ8à½•è¢2
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(ŠÚÒÃşÿÿÿÿ8ÍÌü·¤2
+[
+java:S4719 "9Replace charset name argument with StandardCharsets.UTF_8(ˆ¾ñ¢úÿÿÿÿ8ÒÌü·¤2
+G	java:S106A"+Replace this use of System.out by a logger.(‡Ü¯Š8ÕÌü·¤2
+L	java:S106B"+Replace this use of System.out by a logger.(¬‹ßšşÿÿÿÿ8ÕÌü·¤2
+L	java:S106C"+Replace this use of System.out by a logger.(İ’‡ÿøÿÿÿÿ8ÕÌü·¤2
+G	java:S106D"+Replace this use of System.out by a logger.(²”Áã8ÖÌü·¤2
+F	java:S106E"+Replace this use of System.out by a logger.(–ÒÀR8ÖÌü·¤2
+L	java:S106F"+Replace this use of System.out by a logger.(÷íä¸üÿÿÿÿ8ÖÌü·¤2
+G	java:S106G"+Replace this use of System.out by a logger.(ÉÎ£¶8ÖÌü·¤2
+G	java:S106H"+Replace this use of System.out by a logger.(İÃïë8ÖÌü·¤2
+L	java:S106I"+Replace this use of System.out by a logger.(ôÚÌœÿÿÿÿÿ8×Ìü·¤2
+G	java:S106J"+Replace this use of System.out by a logger.(ç¯Éí8×Ìü·¤2
+L	java:S106K"+Replace this use of System.out by a logger.(™±ùÿÿÿÿ8×Ìü·¤2
+G	java:S106L"+Replace this use of System.out by a logger.(±„òá8×Ìü·¤2
+L	java:S106e"+Replace this use of System.err by a logger.(æôàğùÿÿÿÿ8ÚÌü·¤2
+M	java:S106‰"+Replace this use of System.out by a logger.(ûÜ÷êøÿÿÿÿ8İÌü·¤2
+M	java:S106"+Replace this use of System.out by a logger.(ÕÀğ‡üÿÿÿÿ8ŞÌü·¤2
+H	java:S106˜"+Replace this use of System.out by a logger.(ØŞÿ8ßÌü·¤2
+H	java:S106š"+Replace this use of System.out by a logger.(™÷âµ8ßÌü·¤2
 V
-java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(ÙŠ8å½•è¢2
-L	java:S106!"+Replace this use of System.out by a logger.(£­ªÿÿÿÿÿ8ç½•è¢2
-G	java:S1061"+Replace this use of System.err by a logger.(ºûıò8ë½•è¢2
+java:S1144Ÿ"8Remove this unused private "compterLesAttributs" method.(ä´ÄÎ8ãÌü·¤2

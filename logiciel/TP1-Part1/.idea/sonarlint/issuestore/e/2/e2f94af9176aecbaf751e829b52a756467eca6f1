@@ -1,0 +1,20 @@
+
+k
+java:S3740<"/Provide the parametrized type for this generic.(ª¹¯êJ$19d3301c-998f-45d2-9c5e-ef4af4a7f14d
+š
+java:S2293'"YReplace the type specification in this constructor call with the diamond operator ("<>").(í‚şøÿÿÿÿJ$584d8d50-53be-4940-b37b-f7a9856d838e
+¬
+java:S1319&"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°¦¹J$845aec68-db48-4854-bc30-99fa6bc9f572
+¡	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(êÙâãùÿÿÿÿ8ğ›¹¤2J$5602c934-4052-4a80-9b37-03fe96df9af3
+¡	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(æœº›ùÿÿÿÿ8ğ›¹¤2J$cd54b39d-ba73-4811-b48c-8130aa71d47a
+¡	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ŠÚÒÃşÿÿÿÿ8ğ›¹¤2J$863b5f8b-84af-4293-b4b8-4f7344360cdd
+‰
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(êÙâãùÿÿÿÿ8Ÿğ›¹¤2J$59584a0b-3527-4760-a0ed-cf3a74334505
+‰
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(ŠÚÒÃşÿÿÿÿ8 ğ›¹¤2J$b175df23-5586-456b-8b85-9d67f28a491f
+u
+java:S1854 "9Remove this useless assignment to local variable "parse".(ƒÙÄ­J$569b1c20-3a12-46f4-a36c-264e9d10fc45
+f	java:S106"+Replace this use of System.out by a logger.(ù§éJ$6b18f9b7-bccf-4b72-b19d-5bf686a4f5bd
+f
+java:S1481 "*Remove this unused "parse" local variable.(ƒÙÄ­J$ea473f2d-791e-4352-b8c3-3d77e86f2738
+k	java:S106,"+Replace this use of System.out by a logger.(Ü¶ÍøûÿÿÿÿJ$8990bcb7-d9ec-4775-bdc0-0081c6602e16

@@ -1,0 +1,20 @@
+
+k
+java:S3740M"/Provide the parametrized type for this generic.(ª¹¯êJ$8ad217bd-bc58-4ca3-804d-86021be111cd
+š
+java:S22938"YReplace the type specification in this constructor call with the diamond operator ("<>").(í‚şøÿÿÿÿJ$c903f607-3f57-497a-9fe3-7c95d26aab9a
+¬
+java:S13197"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°¦¹J$16f0b7fe-af7a-4cdd-abc6-196dd2ec7f29
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(î¶õ§ûÿÿÿÿJ$7af7d430-5b37-4bae-8a09-79000bc93af6
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(êÙâãùÿÿÿÿ8…’¹¤2
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(æœº›ùÿÿÿÿ8…’¹¤2
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ŠÚÒÃşÿÿÿÿ8…’¹¤2
+c
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(êÙâãùÿÿÿÿ8ˆ’¹¤2
+‚
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(ŠÚÒÃşÿÿÿÿJ$1789d892-85cf-47b9-9c87-8ab1f50d3443
+|	java:S125&"<This block of commented-out lines of code should be removed.(´ªõÊøÿÿÿÿJ$aff2a381-f413-4de1-a5a3-c5f1643f7a9c
+|	java:S125="<This block of commented-out lines of code should be removed.(Îã•®şÿÿÿÿJ$023cd55c-8c30-4868-9ccd-db2327ca63de
+k	java:S106a"+Replace this use of System.out by a logger.(¾üÒ¢ıÿÿÿÿJ$4be2e716-0550-4ea8-af9f-8664f32745dc
+k	java:S106s"+Replace this use of System.out by a logger.(±§•åúÿÿÿÿJ$b2d282c7-bebb-44b2-a7e9-b04cd74e33f1
+l	java:S106‡"+Replace this use of System.out by a logger.(Å£çÓøÿÿÿÿJ$01113caa-bb97-4b21-a48e-ea517f93c7ba

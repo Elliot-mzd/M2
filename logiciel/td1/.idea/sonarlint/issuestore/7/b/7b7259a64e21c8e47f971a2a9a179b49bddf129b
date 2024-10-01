@@ -1,0 +1,14 @@
+
+k
+java:S3740>"/Provide the parametrized type for this generic.(ª¹¯êJ$11dc02f2-e7fd-4db3-89a2-5418957ebc43
+¬
+java:S1319%"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°¦¹J$49a361dd-c6c6-40aa-8f8a-7a9b28f80a39
+š	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(êÙâãùÿÿÿÿJ$f6514e4d-b2c3-4070-898c-a54edfc9db8a
+š	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(æœº›ùÿÿÿÿJ$1e34324e-e62b-413e-95cd-7ec961d7a9ea
+š	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ŠÚÒÃşÿÿÿÿJ$4f6895a3-0342-41ae-866e-71410bea7ac5
+‚
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(êÙâãùÿÿÿÿJ$cb2fd707-113f-45fb-8b8d-8d81bbc99908
+‚
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(ŠÚÒÃşÿÿÿÿJ$5dc36834-4bb0-456d-987f-3240d6adefd4
+k	java:S106!"+Replace this use of System.out by a logger.(£­ªÿÿÿÿÿJ$9c9fd0e8-736c-4dfe-8b28-b9e6b886b8d9
+f	java:S1061"+Replace this use of System.err by a logger.(ºûıòJ$4e5e1687-b904-4ea4-a790-72094f4e59be

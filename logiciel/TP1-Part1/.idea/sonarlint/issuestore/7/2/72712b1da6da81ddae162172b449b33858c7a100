@@ -1,0 +1,27 @@
+
+r
+java:S3740D"/Provide the parametrized type for this generic.(ª¹¯ê8åšº¤2J$68937044-97f8-450b-ace0-e632aafda598
+¡
+java:S22931"YReplace the type specification in this constructor call with the diamond operator ("<>").(í‚şøÿÿÿÿ8æšº¤2J$e9dca757-9837-426e-a195-c762b5169cce
+‘
+java:S1192~"IDefine a constant instead of duplicating this literal " (type: " 6 times.(·†óúÿÿÿÿ8£ĞÁº¤2J$d6dfc99f-478e-4d1a-9033-40f717925f8d
+³
+java:S13190"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°¦¹8çšº¤2J$bfdd7b39-4033-4a78-a873-034119f416f3
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ËîùØ8êšº¤2J$9d6d3bbe-c302-4e1e-94fc-8a1b4b4f1b36
+¡	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(êÙâãùÿÿÿÿ8¡šº¤2J$ab8617b1-bdaa-4093-b584-7baf3eda6464
+¡	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(æœº›ùÿÿÿÿ8¢šº¤2J$50f7bf3a-3725-4f4f-b76d-2a4102cf6249
+¡	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ŠÚÒÃşÿÿÿÿ8£šº¤2J$0a162532-aaf4-4cbb-8e01-7dece02fdb9c
+‰
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(êÙâãùÿÿÿÿ8¨šº¤2J$3ba289b0-5712-413f-a6d7-1ec31500fee7
+‰
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(ŠÚÒÃşÿÿÿÿ8ªšº¤2J$2f511c8d-3ea5-4f96-aca9-94cdd70e2b06
+€
+java:S1874"8Remove this use of "readFileToString"; it is deprecated.(¶ñƒÌüÿÿÿÿ8¯šº¤2J$5b42d331-8453-4ac6-b8ce-e94d7ea73888
+r	java:S106["+Replace this use of System.out by a logger.(³®€˜ùÿÿÿÿ8·šº¤2J$225af0a6-480e-457d-87de-30da41c4eb11
+m	java:S106j"+Replace this use of System.out by a logger.(æ½Ä8ŸëŸº¤2J$40af862b-1f30-42fd-b726-7791910d8489
+r	java:S106~"+Replace this use of System.out by a logger.(·†óúÿÿÿÿ8½¨µº¤2J$8c73f6f7-8aef-4be7-8271-1088a767a1fb
+n	java:S106"+Replace this use of System.out by a logger.(Óøğ˜8½¨µº¤2J$487c7309-eda7-4c5e-8094-60ca8c4e554a
+H	java:S106Š"+Replace this use of System.out by a logger.(›ÁŠ8äŞº¤2
+H	java:S106Œ"+Replace this use of System.out by a logger.(µ·•Š8äŞº¤2
+M	java:S106"+Replace this use of System.out by a logger.(†‹‡‰ıÿÿÿÿ8äŞº¤2
+G	java:S106•"+Replace this use of System.out by a logger.(ÄÅš;8‚äŞº¤2
