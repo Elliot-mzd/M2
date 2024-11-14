@@ -7,14 +7,18 @@ import org.eclipse.jdt.core.dom.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.nio.file.Paths;
+
 
 public class Parser {
 
-    public static final String projectPath = "/home/e20190006130/Documents/M2/logiciel/td1/TP1-test/";
+    //public static final String projectPath = "/home/e20190006130/Documents/M2/logiciel/td1/TP1-test/";
+    public static final String projectPath = getCurrentProjectPath();
     public static final String projectSourcePath = projectPath + "/src";
     public static final String jrePath = "/home/e20190006130/.jdks/corretto-18.0.2";
 
     public static void main(String[] args) throws IOException {
+
 
         // Lire les fichiers Java
         final File dossier = new File(projectSourcePath);
@@ -183,5 +187,8 @@ public class Parser {
             }
         }
         return nombreDeLignes;
+    }
+    private static String getCurrentProjectPath() {
+        return Paths.get("").toAbsolutePath().toString();
     }
 }
