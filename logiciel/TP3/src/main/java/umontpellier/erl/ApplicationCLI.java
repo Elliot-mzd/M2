@@ -1,19 +1,16 @@
 package umontpellier.erl;
-
 import java.time.LocalDate;
 import java.util.Scanner;
 import org.slf4j.Logger;
-
+import org.slf4j.LoggerFactory;
 public class ApplicationCLI {
     private static ProductService productService = new ProductService();
+
     private static UserService userService = new UserService();
-    private static final Logger logger = org.slf4j.LoggerFactory.getLogger(ApplicationCLI.class);
 
     public static void main(String[] args) {
-        logger.info("Entering method: main(java.lang.String[])");
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
-
         while (!exit) {
             System.out.println("Menu principal:");
             System.out.println("1. Gérer les produits");
@@ -22,32 +19,32 @@ public class ApplicationCLI {
             System.out.print("Choisissez une option: ");
             int mainChoice = scanner.nextInt();
             scanner.nextLine();
-
             switch (mainChoice) {
-                case 1:
+                case 1 :
                     System.out.print("Entrez l'ID de l'utilisateur qui va gérer les produits: ");
                     String userId = scanner.nextLine();
                     try {
                         User user = userService.getUser(userId);
-                        manageProducts(scanner, user);
+                        UserSession.getInstance().setCurrentUser(user);
+                        manageProducts(scanner);
                     } catch (Exception e) {
                         System.out.println("Erreur: " + e.getMessage());
                     }
                     break;
-                case 2:
+                case 2 :
                     createUser(scanner);
                     break;
-                case 3:
+                case 3 :
                     exit = true;
                     break;
-                default:
+                default :
                     System.out.println("Option non valide.");
             }
-        }
+        } 
         scanner.close();
     }
 
-    private static void manageProducts(Scanner scanner, User user) {
+    private static void manageProducts(Scanner scanner) {
         boolean exit = false;
         while (!exit) {
             System.out.println("Menu des produits:");
@@ -62,31 +59,31 @@ public class ApplicationCLI {
             scanner.nextLine();
             try {
                 switch (choice) {
-                    case 1:
+                    case 1 :
                         addProduit(scanner);
                         break;
-                    case 2:
+                    case 2 :
                         productService.displayProducts();
                         break;
-                    case 3:
+                    case 3 :
                         searchProductById(scanner);
                         break;
-                    case 4:
+                    case 4 :
                         deleteProductById(scanner);
                         break;
-                    case 5:
+                    case 5 :
                         updateProductById(scanner);
                         break;
-                    case 6:
+                    case 6 :
                         exit = true;
                         break;
-                    default:
+                    default :
                         System.out.println("Option non valide.");
                 }
             } catch (Exception e) {
                 System.out.println("Erreur: " + e.getMessage());
             }
-        }
+        } 
     }
 
     private static void createUser(Scanner scanner) {
@@ -96,7 +93,8 @@ public class ApplicationCLI {
         String name = scanner.nextLine();
         System.out.print("Entrez l'âge de l'utilisateur: ");
         int age = scanner.nextInt();
-        scanner.nextLine(); // Consomme la nouvelle ligne
+        scanner.nextLine();// Consomme la nouvelle ligne
+
         System.out.print("Entrez l'email de l'utilisateur: ");
         String email = scanner.nextLine();
         System.out.print("Entrez le mot de passe de l'utilisateur: ");
@@ -117,7 +115,8 @@ public class ApplicationCLI {
         String name = scanner.nextLine();
         System.out.print("Entrez le prix du produit: ");
         double price = scanner.nextDouble();
-        scanner.nextLine(); // Consomme la nouvelle ligne
+        scanner.nextLine();// Consomme la nouvelle ligne
+
         System.out.print("Entrez la date d'expiration du produit (YYYY-MM-DD): ");
         String expirationDateStr = scanner.nextLine();
         LocalDate expirationDate = LocalDate.parse(expirationDateStr);
@@ -174,4 +173,5 @@ public class ApplicationCLI {
             System.out.println("Erreur: " + e.getMessage());
         }
     }
+
 }
