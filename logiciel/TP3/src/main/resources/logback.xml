@@ -1,29 +1,52 @@
-<!--<configuration>-->
-<!--    <appender name="JSON" class="ch.qos.logback.core.FileAppender">-->
-<!--        <file>logs/application.json</file>-->
-<!--        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />-->
-<!--    </appender>-->
-
-<!--    <root level="info">-->
-<!--        <appender-ref ref="JSON" />-->
-<!--    </root>-->
-<!--</configuration>-->
 <configuration>
+    <!-- Appender pour écrire les logs en format JSON dans un fichier -->
     <appender name="FILE_JSON" class="ch.qos.logback.core.FileAppender">
         <file>logs/application.json</file>
         <append>true</append>
         <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
+                <!-- Timestamp de l'événement -->
                 <timestamp />
-                <message />
-                <loggerName />
-                <threadName />
+
+                <!-- Niveau de log (INFO, ERROR, etc.) -->
                 <logLevel />
-                <context />
-                <arguments />
+
+                <!-- Nom du logger (classe qui a produit le log) -->
+                <loggerName />
+
+                <!-- Nom du thread (utile pour le debugging multi-thread) -->
+                <threadName />
+
+                <!-- Message du log (ce qui est passé dans logger.info/error) -->
+                <message />
+
+                <!-- Contexte d'exécution du log, notamment les variables MDC -->
+                <mdc />
+
+                <!-- Champs personnalisés extraits du MDC -->
+                <jsonProvider>
+                    <fieldName>userId</fieldName>
+                    <fieldValue>%X{userId}</fieldValue>
+                </jsonProvider>
+                <jsonProvider>
+                    <fieldName>action</fieldName>
+                    <fieldValue>%X{action}</fieldValue>
+                </jsonProvider>
+                <jsonProvider>
+                    <fieldName>productId</fieldName>
+                    <fieldValue>%X{productId}</fieldValue>
+                </jsonProvider>
+
+                <!-- Ajout de champs supplémentaires pour contextualiser les événements -->
+                <jsonProvider>
+                    <fieldName>event</fieldName>
+                    <fieldValue>%X{event}</fieldValue>
+                </jsonProvider>
             </providers>
         </encoder>
     </appender>
+
+    <!-- Root logger -->
     <root level="info">
         <appender-ref ref="FILE_JSON" />
     </root>
