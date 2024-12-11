@@ -1,0 +1,354 @@
+class structure primitive
+
+objIVs
+    ^ self at: self offsetForIVs 
+    
+objIVs: anOrderedCollection
+    self at: self offsetForIVs  put: anOrderedCollection
+    
+objKeywords
+    ^ self at: self offsetForKeywords 
+    
+objKeywords: anOrderedCollection
+    self at: self offsetForKeywords  put: anOrderedCollection
+    
+objMethodDict
+    ^ self at: self offsetForMethodDict 
+    
+objMethodDict: anIdentityDictionary
+    self at: self offsetForMethodDict  put: anIdentityDictionary
+    
+objName
+	"Receiver should be: anObjClass. Returns the name of the receiver (anObjClass)"
+
+	^ self at: self offsetForName 
+	
+	
+objName: aSymbol
+    self at: self offsetForName put: aSymbol
+    
+objSuperclass
+	"Receiver should be: anObjClass. Returns the superclass of the receiver (which is an objClass) and not its internal identification. Differs from superclassId which is a primitive to access the structure representing a class"
+
+	^Obj giveClassNamed: self objSuperclassId
+	
+	
+objSuperclassId
+    ^ self at: self offsetForSuperclass 
+    
+ objSuperclassId: aSymbol
+    self at: self offsetForSuperclass  put: aSymbol
+    
+    
+iv management
+
+numberOfIVs
+	"Returns the number of instance variables of the class an ObjClass"
+
+	^self objIVs size
+	
+offsetFromClassOfInstanceVariable: aSymbol
+
+    | ivList  |
+    ivList := self objIVs. 
+    ^ ivList := ivList indexOf: aSymbol .
+    
+offsetFromObjectOfInstanceVariable: aSymbol
+    "Receiver should be: anObjInstance. Returns the offset of the instance variable represented 
+    by aSymbol. Raises an error if the variable does not exist."
+
+    | class offset |
+    class := self objClass. "Obtenir la classe de l'instance"
+    offset := class offsetFromClassOfInstanceVariable: aSymbol. "Obtenir l'offset"
+    offset = 0 ifTrue: [self error: 'Instance variable does not exist'].
+    ^ offset
+
+
+valueOfInstanceVariable: aSymbol
+    | offset |
+    offset := self offsetFromObjectOfInstanceVariable: aSymbol.
+    ^ self at: offset
+    
+    
+instance allocation
+
+allocateAnInstance
+	"Returns a newly created instance of self, an ObjClass. In this implementation the identifier of the object class is the name of the class. "
+
+	| newI |
+	newI := Obj new: (self numberOfIVs ).
+	newI objClassId: (self objName).
+	^newI    
+    
+    
+iv inheritance
+
+computeNewIVFrom: superIVOrdCol with: localIVOrdCol
+	"Returns an ordered collection that is the union without duplicate of ivOfSuper and ivOrderedCollection.
+	Important the order of the instance variable is conserved"
+
+	| ivs |
+	^superIVOrdCol isNil 
+		ifTrue: [localIVOrdCol]
+		ifFalse: 
+			[ivs := superIVOrdCol asOrderedCollection copy.
+			localIVOrdCol do: [:e | (ivs includes: e) ifFalse: [ivs add: e]].
+			ivs]
+			
+			
+computeNewIVFromClass: anObjClass with: ivOrderedCollection 
+	"Obj computeNewIVFromClass: #(#C #C #O #(a b c d)) with: #(a z b t) asOrderedCollection"
+
+	| ivs |
+	^anObjClass isNil
+		ifTrue: [ivOrderedCollection]
+		ifFalse: 
+			[ivs := anObjClass objIVs asOrderedCollection copy.
+			ivOrderedCollection do: [:e | (ivs includes: e) ifFalse: [ivs add: e]].
+			ivs]
+			
+			
+keyword management
+
+computeAndSetKeywords
+	"Compute the keywords of a given class.  As the class of an object should not be changed.
+	 the keywords should note contain the keyword class. self is anObjClass"
+
+	self objKeywords: (self generateKeywords: (self objIVs copyWithout: #class))
+	
+	
+generateKeywords: anArray 
+	"Returns an array containing the keywords made from the collection of Symbol passed as argument"
+	"self new generateKeywords: #(titi toto lulu) "
+
+	^anArray collect: [:e | (e , ':') asSymbol]
+	
+keywordValue: aSymbol getFrom: anArray ifAbsent: aDefaultValue 
+	"precondition: ((length anArray) mod 2) = 0 
+	returns the value associated with the keyword represented by aSymbol 
+	in the initarg list represented by anArray."
+
+	"self new keywordValue: #titi getFrom: #(toto 12 titi 23) ifAbsent: 2"
+	"self new keywordValue: #titi getFrom: #(toto 23) ifAbsent: 2"
+
+	| i |
+	i := anArray indexOf: aSymbol ifAbsent: nil.
+	^i isNil 
+		ifTrue: [aDefaultValue] 
+		ifFalse: [anArray at: i + 1]
+		
+returnValuesFrom: anInitargArray followingSchema: anArrayOfKeywords 
+	"Return the values associated with the keys. The extracted values are taken from <anInitargArray> 
+	and the return values are extracted according to the schema defined by the collection of keys <anArrayOfKeywords>"
+
+	"self new returnValuesFrom: #(lulu 22  titi 35)  followingSchema: #(titi toto lulu titi)  #(35 nil 22 35)"
+
+	^anArrayOfKeywords collect: 
+			[:e | 
+			self keywordValue: e
+				getFrom: anInitargArray 
+				ifAbsent: nil]
+				
+				
+message passing
+
+basicSend: selector withArguments: arguments from: aClass
+    "Execute the method found starting from aClass and whose name is selector.
+    The core of sending a message, reused for both a normal send or a super one."
+
+    | methodOrNil |
+    methodOrNil := aClass lookup: selector.
+    ^ methodOrNil
+        ifNotNil: [ methodOrNil valueWithArguments: (Array with: self) , arguments ]
+        ifNil: [ self sendError: selector withArgs: arguments ].
+
+
+send: selector withArguments: arguments
+    "Send the message with the selector to the receiver. 
+    The method is looked up starting in the class of the receiver."
+
+    ^ self basicSend: selector withArguments: arguments from: self objClass.
+    
+
+sendError: selector withArgs: arguments
+    "send error wrapping arguments into an array with the selector as first argument. Instead of an array we should create a message object."
+
+    ^ self send: #error withArguments:  {(arguments copyWithFirst: selector)}
+    
+super: selector withArguments: arguments from: aSuperclass
+    "Send a message to the receiver starting lookup in a superclass.
+    selector: The method name to invoke.
+    arguments: The arguments to pass to the method.
+    aSuperclass: The superclass where the lookup starts."
+
+    ^ self basicSend: selector withArguments: arguments from: aSuperclass.
+
+
+method lookup
+
+lookup: selector
+    "Cherche la méthode désignée par <selector> dans la classe actuelle et ses superclasses. 
+    Si la méthode n'est pas trouvée, retourne nil."
+    
+    | method superclassid |
+
+    "1. On tente de récupérer la méthode depuis le dictionnaire des méthodes de la classe actuelle"
+    method := self objMethodDict at: selector ifAbsent: [nil].
+
+    "2. Si la méthode est trouvée, on la retourne immédiatement"
+    method ifNotNil: [ ^method ].
+
+    "3. Si la méthode n'est pas dans la classe actuelle, on vérifie la classe parente"
+    superclassid := self objSuperclassId.
+
+    "4. Si la classe n'a pas de classe parente, cela signifie qu'il n'y a plus d'endroit où chercher"
+    superclassid ifNil: [ ^nil ].
+
+    "5. Si une classe parente existe, la recherche continue dans celle-ci"
+    ^ self objSuperclass lookup: selector.
+    
+    
+method management
+
+stringOfBlockBodyFromHeader: col andBody: aString 
+	^ '[ :superClassOfClassDefiningTheMethod |
+		[ :objself ' , (self blockArgsFrom: col) , ' |
+					 ' , aString , '] ]'
+					 
+					 
+					 
+					 
+removeMethod: aSelector
+	"Remove the method with aSelector <aSymbol> in the receiver. 
+	self is an objClass"
+
+	self objMethodDict removeKey: aSelector ifAbsent: [].
+	^self
+	
+methodWithHeader: col andBody: aString
+	| block string resBlock |
+	string := self stringOfBlockBodyFromHeader: col andBody: aString.
+	block := Compiler new
+		source: string;
+		evaluate.
+
+	"bind superclass to the superclass of the class defining the method"
+	resBlock := block
+		value: (Obj giveClassNamed: self objSuperclassId ifAbsent: [ 666 ]).
+	^ resBlock
+	
+doesUnderstand: aSelector 
+	"Tell if the receiver has a method having <aSelector> as selector. self is anObjClass"
+
+	^self objMethodDict keys includes: aSelector
+	
+bodyOfMethod: aSelector
+    "Returns the block associated with the selector aSelector in the method dictionary of the class.
+    If the method is not found, returns nil."
+
+    ^ (self objMethodDict at: aSelector ifAbsent: [nil]).
+    
+
+blockArgsFrom: aCol
+	"self basicNew blockArgsFrom: ' abc def ghi '"	
+	
+	| col st |
+	col := aCol findTokens: Character space.
+	col := col copyWithout: ''.
+	st := ''.
+	col do: [ :each | st := st , ':', each ] separatedBy: [st := st, ' '].
+	^ st
+	
+addUnaryMethod: aSelector withBody: aStringBlock 
+	"Define a unary method with selector <aSelector> and a body <aaStringBlock> in the receiver.
+	If a method with the same selector already existed, the new definition will erase it.
+	self is an objClass"
+
+	self  addMethod: aSelector args: '' withBody: aStringBlock
+	
+addMethod: aSelector args: aString withBody: aStringBlock 
+	"Define a method with selector <aSelector> , having a string representing the arguments (ie 'aNumber aStream') 
+	and a string representing the method body in the receiver.
+	If a method with the same selector already existed, the new definition will erase it.
+	self is an objClass"
+
+	self  objMethodDict at: aSelector put: (self methodWithHeader: aString andBody: aStringBlock).
+	^self
+	
+object structure primitive
+
+objClass
+    "Receiver should be: anObjObject. Returns the class of the receiver (which is an ObjObject) and not its internal identification. Differs from classId  which is a primitive to access the structure representing a class"
+    "self class == Obj"
+
+    ^ (self class) giveClassNamed: (self objClassId)
+    
+objClassId
+	"Receiver should be: anObjObject. Returns the identifier that identifies the class of the receiver (an objObject). In this implementation we chose to use the class name as identifier"
+
+	^ self at: self offsetForClass 
+	
+objClassId: anObjClassId
+	"Receiver should be: anObjObject. Set the identifier that identifies the class of the receiver (anObjObject)."
+
+	^ self at: (self offsetForClass) put: anObjClassId  
+	
+objPointTest
+TestCase subclass: #ObjPointTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	package: 'ObjVSkeleton'
+	
+testAbstractMetaclassExample
+
+	self should: [Obj ObjAbstractClass send: #new withArguments: #(#(#x: 24 #y: 6))] raise: Error.
+	
+testAbstractMetaclassExampleWithConcreteSubclass
+
+	self shouldnt: [Obj ObjPoint send: #new withArguments: #(#(#x: 24 #y: 6))]
+		raise: Error
+		
+testColoredPoint
+
+	| coloredPointClass aColoredPoint |
+	coloredPointClass := (Obj ObjClass)
+						 	send: #new 
+							withArguments: #((#name: #ObjColoredPoint 
+							           		   #iv: #(#color) 
+							            	  #superclass: #ObjPoint)).
+
+	aColoredPoint := coloredPointClass send: #new withArguments: #((#x: 24 #y: 6 #color: #blue)).	
+	"first messages sent"
+
+	self assert: (aColoredPoint send: #getIV withArguments: #(#x)) = 24.
+	aColoredPoint send: #setIV withArguments: #(#x 25).
+	self assert: (aColoredPoint send: #getIV withArguments: #(#x)) = 25.
+
+	self assert: (aColoredPoint send: #getIV withArguments: #(#color)) = #blue.	
+
+	"adding some methods"
+
+	coloredPointClass 
+		addUnaryMethod: #giveColor
+		withBody: 'objself send: #getIV withArguments: #(#color)'.
+
+	coloredPointClass 
+		addMethod: #setColor
+		args: 'col'
+		withBody:' objself send: #setIV withArguments: (Array with: #color with: col)'.
+
+	coloredPointClass addUnaryMethod: #display
+		withBody:  
+			'objself super: #display withArguments: #() from: superClassOfClassDefiningTheMethod.
+			Transcript cr;
+				show: '' with Color = ''.
+			Transcript show: (objself send: #giveColor withArguments: #()) printString;
+				cr'.
+	self assert: (aColoredPoint send: #giveColor withArguments: #()) = #blue.
+	
+	self assert: (aColoredPoint send: #givex withArguments: #()) = 25.
+	
+	aColoredPoint send: #display withArguments: #().
+
+
+    
