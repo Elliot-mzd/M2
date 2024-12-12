@@ -1,0 +1,71 @@
+FormalContext Kclass
+||class|
+|IronMan   |x|
+|Thor      |x| 
+|Hulk      |x| 
+|SpiderMan |x| 
+|Avengers  |x|		
+
+FormalContext Kattribute
+||armorStrength|hammerWeight|gammaRadiation|spideySense|teamLeadership|arcReactor|webFluid|strength|agility|missionCount|energyType|powerLevel|
+|IronMan::armorStrength |x| | | | |x| | | | |x| |
+|Thor::hammerWeight     | |x| | | | | | | | | |x|
+|Hulk::gammaRadiation   | | |x| | | | | | | | | |
+|SpiderMan::spideySense | | | |x| | | |x|x| | | |
+|Avengers::teamLeadership| | | | |x| | | | |x| | |
+
+FormalContext Krole
+||defender|teamLeader|rogue|
+|Thor::defender       |x| | |
+|Avengers::teamLeader | |x| |
+|SpiderMan::rogue     | | |x|
+
+FormalContext Koperation
+||assemble|smash|webSwing|lightningStrike|energyBlast|
+|Avengers::assemble    |x| | | | |
+|Hulk::smash           | |x| | | |
+|SpiderMan::webSwing   | | |x| | |
+|Thor::lightningStrike | | | |x| |
+|IronMan::energyBlast  | | | | |x|
+
+RelationalContext hasAttribute
+source Kclass
+target Kattribute
+scaling exist
+||IronMan::armorStrength|Thor::hammerWeight|Hulk::gammaRadiation|SpiderMan::spideySense|Avengers::teamLeadership|IronMan::arcReactor|SpiderMan::webFluid|Hulk::strength|SpiderMan::agility|Avengers::missionCount|IronMan::energyType|Thor::powerLevel|
+|IronMan   |x| | | | |x| | | | |x| |
+|Thor      | |x| | | | | | | | | |x|
+|Hulk      | | |x| | | | |x| | | | |
+|SpiderMan | | | |x| | |x| |x|x| | |
+|Avengers  | | | | |x| | | | |x| | |
+
+RelationalContext hasRole
+source Kclass
+target Krole
+scaling exist
+||Thor::defender|Avengers::teamLeader|SpiderMan::rogue|
+|IronMan   | |x| |
+|Thor      |x| | |
+|Hulk      | | | |
+|SpiderMan | | |x|
+|Avengers  | |x| |
+
+RelationalContext hasOperation
+source Kclass
+target Koperation
+scaling exist
+||Avengers::assemble|Hulk::smash|SpiderMan::webSwing|Thor::lightningStrike|IronMan::energyBlast|
+|IronMan   | | | | |x|
+|Thor      | | | |x| |
+|Hulk      | |x| | | |
+|SpiderMan | | |x| | |
+|Avengers  |x| | | | |
+
+RelationalContext hasTypeEnd
+source Krole
+target Kclass
+scaling exist
+||IronMan|Thor|Hulk|SpiderMan|Avengers|
+|Thor::defender       | |x| | | |
+|Avengers::teamLeader |x| | | |x|
+|SpiderMan::rogue     | | | |x| |

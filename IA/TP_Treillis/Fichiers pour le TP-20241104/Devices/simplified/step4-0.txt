@@ -1,0 +1,1 @@
+Kclass: step=5 nb.concepts=11 nb.attrib rel.=22

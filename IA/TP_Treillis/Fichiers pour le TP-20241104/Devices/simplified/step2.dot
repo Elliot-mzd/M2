@@ -1,0 +1,68 @@
+digraph G { 
+	rankdir=BT;
+subgraph Kclass { 
+label="Kclass";
+30 [shape=record,style=filled,label="{C_Kclass_30|exist_hasAttribute(int)\nexist_hasAttribute(waterAmount)\nexist_hasOperation(MCWA)\n|Rainfall\n}"];
+31 [shape=record,style=filled,label="{C_Kclass_31|exist_hasAttribute(real)\nexist_hasAttribute(windStrength)\nexist_hasAttribute(windDirection)\nexist_hasOperation(MCWSWD)\n|Wind\n}"];
+32 [shape=record,style=filled,label="{C_Kclass_32|exist_hasAttribute(period)\nexist_hasRole(storedRainfall)\nexist_hasOperation(PstoredRF)\n|RainReport\n}"];
+34 [shape=record,style=filled,label="{C_Kclass_34|exist_hasAttribute(tubeHeight)\nexist_hasRole(measuredRainfall)\n|RainGauge\n}"];
+35 [shape=record,style=filled,label="{C_Kclass_35|exist_hasAttribute(measureInterval)\nexist_hasAttribute(precision)\nexist_hasRole(measuredWind&exist_hasTypeEnd(exist_hasAttribute(real)&exist_hasAttribute(windStrength)&exist_hasAttribute(windDirection)&exist_hasOperation(MCWSWD)))\n|Anemometer\n}"];
+33 [shape=record,style=filled,fillcolor=lightblue,label="{C_Kclass_33|exist_hasAttribute(measuringDate)\nexist_hasAttribute(codeQuality&number)\nexist_hasOperation(MC)\n|}"];
+36 [shape=record,style=filled,fillcolor=lightblue,label="{C_Kclass_36|exist_hasOperation(print)\n|}"];
+38 [shape=record,style=filled,fillcolor=lightblue,label="{C_Kclass_38|exist_hasRole(exist_hasTypeEnd(class)&exist_hasTypeEnd(exist_hasAttribute(measuringDate)&exist_hasAttribute(codeQuality&number)&exist_hasOperation(MC))&exist_hasTypeEnd(exist_hasOperation(print)))\n|}"];
+1 [shape=record,style=filled,fillcolor=lightblue,label="{C_Kclass_1|class\n|}"];
+	30 -> 33
+	31 -> 33
+	32 -> 36
+	33 -> 36
+	32 -> 38
+	34 -> 38
+	35 -> 38
+	36 -> 1
+	38 -> 1
+}
+subgraph Kattribute { 
+label="Kattribute";
+11 [shape=record,style=filled,label="{C_Kattribute_11|int\n|R::codeQuality\n}"];
+12 [shape=record,style=filled,label="{C_Kattribute_12|real\n|W::codeQuality\n}"];
+13 [shape=record,style=filled,label="{C_Kattribute_13|tubeHeight\n|RG::tubeHeight\n}"];
+14 [shape=record,style=filled,label="{C_Kattribute_14|measureInterval\n|A::measureInterval\n}"];
+15 [shape=record,style=filled,label="{C_Kattribute_15|precision\n|A::precision\n}"];
+16 [shape=record,style=filled,fillcolor=orange,label="{C_Kattribute_16|measuringDate\n|R::measuringDate\nW::measuringDate\n}"];
+17 [shape=record,style=filled,label="{C_Kattribute_17|waterAmount\n|R::waterAmount\n}"];
+18 [shape=record,style=filled,label="{C_Kattribute_18|windStrength\n|W::windStrength\n}"];
+19 [shape=record,style=filled,label="{C_Kattribute_19|windDirection\n|W::windDirection\n}"];
+20 [shape=record,style=filled,label="{C_Kattribute_20|period\n|RR::period\n}"];
+21 [shape=record,style=filled,fillcolor=lightblue,label="{C_Kattribute_21|codeQuality\nnumber\n|}"];
+	11 -> 21
+	12 -> 21
+}
+subgraph Krole { 
+label="Krole";
+39 [shape=record,style=filled,fillcolor=lightblue,label="{C_Krole_39|exist_hasTypeEnd(exist_hasAttribute(period)&exist_hasRole(storedRainfall)&exist_hasOperation(PstoredRF))\nexist_hasTypeEnd(exist_hasAttribute(tubeHeight)&exist_hasRole(measuredRainfall))\nexist_hasTypeEnd(exist_hasAttribute(measureInterval)&exist_hasAttribute(precision)&exist_hasRole(measuredWind&exist_hasTypeEnd(exist_hasAttribute(real)&exist_hasAttribute(windStrength)&exist_hasAttribute(windDirection)&exist_hasOperation(MCWSWD))))\n|}"];
+22 [shape=record,style=filled,label="{C_Krole_22|measuredRainfall\n|RG::measuredRainfall\n}"];
+23 [shape=record,style=filled,label="{C_Krole_23|storedRainfall\n|RR::storedRainfall\n}"];
+24 [shape=record,style=filled,label="{C_Krole_24|measuredWind\nexist_hasTypeEnd(exist_hasAttribute(real)&exist_hasAttribute(windStrength)&exist_hasAttribute(windDirection)&exist_hasOperation(MCWSWD))\n|A::measuredWind\n}"];
+40 [shape=record,style=filled,fillcolor=lightblue,label="{C_Krole_40|exist_hasTypeEnd(exist_hasAttribute(int)&exist_hasAttribute(waterAmount)&exist_hasOperation(MCWA))\n|}"];
+37 [shape=record,style=filled,fillcolor=lightblue,label="{C_Krole_37|exist_hasTypeEnd(class)\nexist_hasTypeEnd(exist_hasAttribute(measuringDate)&exist_hasAttribute(codeQuality&number)&exist_hasOperation(MC))\nexist_hasTypeEnd(exist_hasOperation(print))\n|}"];
+	39 -> 22
+	39 -> 23
+	39 -> 24
+	22 -> 40
+	23 -> 40
+	24 -> 37
+	40 -> 37
+}
+subgraph Koperation { 
+label="Koperation";
+25 [shape=record,style=filled,label="{C_Koperation_25|MCWA\n|R::printinfo\n}"];
+26 [shape=record,style=filled,label="{C_Koperation_26|MCWSWD\n|W::printinfo\n}"];
+27 [shape=record,style=filled,label="{C_Koperation_27|PstoredRF\n|RR::print\n}"];
+28 [shape=record,style=filled,fillcolor=lightblue,label="{C_Koperation_28|MC\n|}"];
+29 [shape=record,style=filled,fillcolor=lightblue,label="{C_Koperation_29|print\n|}"];
+	25 -> 28
+	26 -> 28
+	27 -> 29
+	28 -> 29
+}
+}

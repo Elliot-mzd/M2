@@ -1,0 +1,76 @@
+FormalContext Kclass
+||class|exist_hasAttribute(int)|exist_hasAttribute(real)|exist_hasAttribute(tubeHeight)|exist_hasAttribute(measureInterval)|exist_hasAttribute(precision)|exist_hasAttribute(measuringDate)|exist_hasAttribute(waterAmount)|exist_hasAttribute(windStrength)|exist_hasAttribute(windDirection)|exist_hasAttribute(period)|exist_hasAttribute(codeQuality&number)|exist_hasRole(measuredRainfall)|exist_hasRole(storedRainfall)|exist_hasRole(measuredWind&exist_hasTypeEnd(exist_hasAttribute(real)&exist_hasAttribute(windStrength)&exist_hasAttribute(windDirection)&exist_hasOperation(MCWSWD)))|exist_hasOperation(MCWA)|exist_hasOperation(MCWSWD)|exist_hasOperation(PstoredRF)|exist_hasOperation(MC)|exist_hasOperation(print)|exist_hasRole(exist_hasTypeEnd(class)&exist_hasTypeEnd(exist_hasAttribute(measuringDate)&exist_hasAttribute(codeQuality&number)&exist_hasOperation(MC))&exist_hasTypeEnd(exist_hasOperation(print)))|
+|RainGauge|x|||x|||||||||x||||||||x|
+|Anemometer|x||||x|x|||||||||x||||||x|
+|Rainfall|x|x|||||x|x||||x||||x|||x|x||
+|Wind|x||x||||x||x|x||x|||||x||x|x||
+|RainReport|x||||||||||x|||x||||x||x|x|
+
+FormalContext Kattribute
+||tubeHeight|measureInterval|precision|measuringDate|codeQuality|waterAmount|windStrength|windDirection|period|number|int|real|
+|RG::tubeHeight|x||||||||||||
+|A::measureInterval||x|||||||||||
+|A::precision|||x||||||||||
+|R::measuringDate||||x|||||||||
+|W::measuringDate||||x|||||||||
+|R::codeQuality|||||x|||||x|x||
+|W::codeQuality|||||x|||||x||x|
+|R::waterAmount||||||x|||||||
+|W::windStrength|||||||x||||||
+|W::windDirection||||||||x|||||
+|RR::period|||||||||x||||
+
+FormalContext Krole
+||measuredRainfall|measuredWind|storedRainfall|exist_hasTypeEnd(class)|exist_hasTypeEnd(exist_hasAttribute(int)&exist_hasAttribute(waterAmount)&exist_hasOperation(MCWA))|exist_hasTypeEnd(exist_hasAttribute(real)&exist_hasAttribute(windStrength)&exist_hasAttribute(windDirection)&exist_hasOperation(MCWSWD))|exist_hasTypeEnd(exist_hasAttribute(period)&exist_hasRole(storedRainfall)&exist_hasOperation(PstoredRF))|exist_hasTypeEnd(exist_hasAttribute(measuringDate)&exist_hasAttribute(codeQuality&number)&exist_hasOperation(MC))|exist_hasTypeEnd(exist_hasAttribute(tubeHeight)&exist_hasRole(measuredRainfall))|exist_hasTypeEnd(exist_hasAttribute(measureInterval)&exist_hasAttribute(precision)&exist_hasRole(measuredWind&exist_hasTypeEnd(exist_hasAttribute(real)&exist_hasAttribute(windStrength)&exist_hasAttribute(windDirection)&exist_hasOperation(MCWSWD))))|exist_hasTypeEnd(exist_hasOperation(print))|
+|RG::measuredRainfall|x|||x|x|||x|||x|
+|RR::storedRainfall|||x|x|x|||x|||x|
+|A::measuredWind||x||x||x||x|||x|
+
+FormalContext Koperation
+||print|MC|MCWA|MCWSWD|PstoredRF|
+|RR::print|x||||x|
+|R::printinfo|x|x|x|||
+|W::printinfo|x|x||x||
+
+RelationalContext hasAttribute
+source Kclass
+target Kattribute
+scaling exist
+||RG::tubeHeight|A::measureInterval|A::precision|R::measuringDate|W::measuringDate|R::codeQuality|W::codeQuality|R::waterAmount|W::windStrength|W::windDirection|RR::period|
+|RainGauge|x|||||||||||
+|Anemometer||x|x|||||||||
+|Rainfall||||x||x||x||||
+|Wind|||||x||x||x|x||
+|RainReport|||||||||||x|
+
+RelationalContext hasRole
+source Kclass
+target Krole
+scaling exist
+||RG::measuredRainfall|RR::storedRainfall|A::measuredWind|
+|RainGauge|x|||
+|Anemometer|||x|
+|Rainfall||||
+|Wind||||
+|RainReport||x||
+
+RelationalContext hasOperation
+source Kclass
+target Koperation
+scaling exist
+||RR::print|R::printinfo|W::printinfo|
+|RainGauge||||
+|Anemometer||||
+|Rainfall||x||
+|Wind|||x|
+|RainReport|x|||
+
+RelationalContext hasTypeEnd
+source Krole
+target Kclass
+scaling exist
+||RainGauge|Anemometer|Rainfall|Wind|RainReport|
+|RG::measuredRainfall|||x|||
+|RR::storedRainfall|||x|||
+|A::measuredWind||||x||
+

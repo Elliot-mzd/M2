@@ -1,0 +1,41 @@
+digraph G { 
+	rankdir=BT;
+subgraph Kclass { 
+label="Kclass";
+1 [shape=record,style=filled,fillcolor=orange,label="{C_Kclass_1|class\n|RainGauge\nAnemometer\nRainfall\nWind\nRainReport\n}"];
+}
+subgraph Kattribute { 
+label="Kattribute";
+11 [shape=record,style=filled,label="{C_Kattribute_11|int\n|R::codeQuality\n}"];
+12 [shape=record,style=filled,label="{C_Kattribute_12|real\n|W::codeQuality\n}"];
+13 [shape=record,style=filled,label="{C_Kattribute_13|tubeHeight\n|RG::tubeHeight\n}"];
+14 [shape=record,style=filled,label="{C_Kattribute_14|measureInterval\n|A::measureInterval\n}"];
+15 [shape=record,style=filled,label="{C_Kattribute_15|precision\n|A::precision\n}"];
+16 [shape=record,style=filled,fillcolor=orange,label="{C_Kattribute_16|measuringDate\n|R::measuringDate\nW::measuringDate\n}"];
+17 [shape=record,style=filled,label="{C_Kattribute_17|waterAmount\n|R::waterAmount\n}"];
+18 [shape=record,style=filled,label="{C_Kattribute_18|windStrength\n|W::windStrength\n}"];
+19 [shape=record,style=filled,label="{C_Kattribute_19|windDirection\n|W::windDirection\n}"];
+20 [shape=record,style=filled,label="{C_Kattribute_20|period\n|RR::period\n}"];
+21 [shape=record,style=filled,fillcolor=lightblue,label="{C_Kattribute_21|codeQuality\nnumber\n|}"];
+	11 -> 21
+	12 -> 21
+}
+subgraph Krole { 
+label="Krole";
+22 [shape=record,style=filled,label="{C_Krole_22|measuredRainfall\n|RG::measuredRainfall\n}"];
+23 [shape=record,style=filled,label="{C_Krole_23|storedRainfall\n|RR::storedRainfall\n}"];
+24 [shape=record,style=filled,label="{C_Krole_24|measuredWind\n|A::measuredWind\n}"];
+}
+subgraph Koperation { 
+label="Koperation";
+25 [shape=record,style=filled,label="{C_Koperation_25|MCWA\n|R::printinfo\n}"];
+26 [shape=record,style=filled,label="{C_Koperation_26|MCWSWD\n|W::printinfo\n}"];
+27 [shape=record,style=filled,label="{C_Koperation_27|PstoredRF\n|RR::print\n}"];
+28 [shape=record,style=filled,fillcolor=lightblue,label="{C_Koperation_28|MC\n|}"];
+29 [shape=record,style=filled,fillcolor=lightblue,label="{C_Koperation_29|print\n|}"];
+	25 -> 28
+	26 -> 28
+	27 -> 29
+	28 -> 29
+}
+}

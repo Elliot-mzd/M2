@@ -1,0 +1,638 @@
+[
+{
+"attributes": {
+"class": "class"
+},
+"children": [
+36,
+38
+],
+"context": "Kclass",
+"id": 1,
+"objects": [],
+"parents": []
+},
+{
+"attributes": {
+"exist_hasOperation": {
+"concepts": [
+29
+],
+"operator": "exist",
+"relation": "hasOperation",
+"target": "Koperation"
+}
+},
+"children": [
+32,
+33
+],
+"context": "Kclass",
+"id": 36,
+"objects": [],
+"parents": [
+1
+]
+},
+{
+"attributes": {
+"exist_hasRole": {
+"concepts": [
+37
+],
+"operator": "exist",
+"relation": "hasRole",
+"target": "Krole"
+}
+},
+"children": [
+35,
+42
+],
+"context": "Kclass",
+"id": 38,
+"objects": [],
+"parents": [
+1
+]
+},
+{
+"attributes": {
+"exist_hasAttribute": {
+"concepts": [
+16,
+21
+],
+"operator": "exist",
+"relation": "hasAttribute",
+"target": "Kattribute"
+},
+"exist_hasOperation": {
+"concepts": [
+28
+],
+"operator": "exist",
+"relation": "hasOperation",
+"target": "Koperation"
+}
+},
+"children": [
+30,
+31
+],
+"context": "Kclass",
+"id": 33,
+"objects": [],
+"parents": [
+36
+]
+},
+{
+"attributes": {
+"exist_hasRole": {
+"concepts": [
+40
+],
+"operator": "exist",
+"relation": "hasRole",
+"target": "Krole"
+}
+},
+"children": [
+32,
+34
+],
+"context": "Kclass",
+"id": 42,
+"objects": [],
+"parents": [
+38
+]
+},
+{
+"attributes": {
+"exist_hasAttribute": {
+"concepts": [
+14,
+15
+],
+"operator": "exist",
+"relation": "hasAttribute",
+"target": "Kattribute"
+},
+"exist_hasRole": {
+"concepts": [
+24
+],
+"operator": "exist",
+"relation": "hasRole",
+"target": "Krole"
+}
+},
+"children": [
+41
+],
+"context": "Kclass",
+"id": 35,
+"objects": [
+"Anemometer"
+],
+"parents": [
+38
+]
+},
+{
+"attributes": {
+"exist_hasAttribute": {
+"concepts": [
+12,
+18,
+19
+],
+"operator": "exist",
+"relation": "hasAttribute",
+"target": "Kattribute"
+},
+"exist_hasOperation": {
+"concepts": [
+26
+],
+"operator": "exist",
+"relation": "hasOperation",
+"target": "Koperation"
+}
+},
+"children": [
+41
+],
+"context": "Kclass",
+"id": 31,
+"objects": [
+"Wind"
+],
+"parents": [
+33
+]
+},
+{
+"attributes": {
+"exist_hasAttribute": {
+"concepts": [
+11,
+17
+],
+"operator": "exist",
+"relation": "hasAttribute",
+"target": "Kattribute"
+},
+"exist_hasOperation": {
+"concepts": [
+25
+],
+"operator": "exist",
+"relation": "hasOperation",
+"target": "Koperation"
+}
+},
+"children": [
+41
+],
+"context": "Kclass",
+"id": 30,
+"objects": [
+"Rainfall"
+],
+"parents": [
+33
+]
+},
+{
+"attributes": {
+"exist_hasAttribute": {
+"concepts": [
+13
+],
+"operator": "exist",
+"relation": "hasAttribute",
+"target": "Kattribute"
+},
+"exist_hasRole": {
+"concepts": [
+22
+],
+"operator": "exist",
+"relation": "hasRole",
+"target": "Krole"
+}
+},
+"children": [
+41
+],
+"context": "Kclass",
+"id": 34,
+"objects": [
+"RainGauge"
+],
+"parents": [
+42
+]
+},
+{
+"attributes": {
+"exist_hasAttribute": {
+"concepts": [
+20
+],
+"operator": "exist",
+"relation": "hasAttribute",
+"target": "Kattribute"
+},
+"exist_hasOperation": {
+"concepts": [
+27
+],
+"operator": "exist",
+"relation": "hasOperation",
+"target": "Koperation"
+},
+"exist_hasRole": {
+"concepts": [
+23
+],
+"operator": "exist",
+"relation": "hasRole",
+"target": "Krole"
+}
+},
+"children": [
+41
+],
+"context": "Kclass",
+"id": 32,
+"objects": [
+"RainReport"
+],
+"parents": [
+36,
+42
+]
+},
+{
+"attributes": {
+"exist_hasRole": {
+"concepts": [
+39
+],
+"operator": "exist",
+"relation": "hasRole",
+"target": "Krole"
+}
+},
+"children": [],
+"context": "Kclass",
+"id": 41,
+"objects": [],
+"parents": [
+30,
+31,
+32,
+34,
+35
+]
+},
+{
+"attributes": {
+"codeQuality": "codeQuality",
+"number": "number"
+},
+"children": [
+11,
+12
+],
+"context": "Kattribute",
+"id": 21,
+"objects": [],
+"parents": []
+},
+{
+"attributes": {
+"period": "period"
+},
+"children": [],
+"context": "Kattribute",
+"id": 20,
+"objects": [
+"RR::period"
+],
+"parents": []
+},
+{
+"attributes": {
+"windDirection": "windDirection"
+},
+"children": [],
+"context": "Kattribute",
+"id": 19,
+"objects": [
+"W::windDirection"
+],
+"parents": []
+},
+{
+"attributes": {
+"windStrength": "windStrength"
+},
+"children": [],
+"context": "Kattribute",
+"id": 18,
+"objects": [
+"W::windStrength"
+],
+"parents": []
+},
+{
+"attributes": {
+"waterAmount": "waterAmount"
+},
+"children": [],
+"context": "Kattribute",
+"id": 17,
+"objects": [
+"R::waterAmount"
+],
+"parents": []
+},
+{
+"attributes": {
+"measuringDate": "measuringDate"
+},
+"children": [],
+"context": "Kattribute",
+"id": 16,
+"objects": [
+"R::measuringDate",
+"W::measuringDate"
+],
+"parents": []
+},
+{
+"attributes": {
+"precision": "precision"
+},
+"children": [],
+"context": "Kattribute",
+"id": 15,
+"objects": [
+"A::precision"
+],
+"parents": []
+},
+{
+"attributes": {
+"measureInterval": "measureInterval"
+},
+"children": [],
+"context": "Kattribute",
+"id": 14,
+"objects": [
+"A::measureInterval"
+],
+"parents": []
+},
+{
+"attributes": {
+"tubeHeight": "tubeHeight"
+},
+"children": [],
+"context": "Kattribute",
+"id": 13,
+"objects": [
+"RG::tubeHeight"
+],
+"parents": []
+},
+{
+"attributes": {
+"real": "real"
+},
+"children": [],
+"context": "Kattribute",
+"id": 12,
+"objects": [
+"W::codeQuality"
+],
+"parents": [
+21
+]
+},
+{
+"attributes": {
+"int": "int"
+},
+"children": [],
+"context": "Kattribute",
+"id": 11,
+"objects": [
+"R::codeQuality"
+],
+"parents": [
+21
+]
+},
+{
+"attributes": {
+"exist_hasTypeEnd": {
+"concepts": [
+1,
+33,
+36
+],
+"operator": "exist",
+"relation": "hasTypeEnd",
+"target": "Kclass"
+}
+},
+"children": [
+24,
+40
+],
+"context": "Krole",
+"id": 37,
+"objects": [],
+"parents": []
+},
+{
+"attributes": {
+"exist_hasTypeEnd": {
+"concepts": [
+30
+],
+"operator": "exist",
+"relation": "hasTypeEnd",
+"target": "Kclass"
+}
+},
+"children": [
+22,
+23
+],
+"context": "Krole",
+"id": 40,
+"objects": [],
+"parents": [
+37
+]
+},
+{
+"attributes": {
+"exist_hasTypeEnd": {
+"concepts": [
+31
+],
+"operator": "exist",
+"relation": "hasTypeEnd",
+"target": "Kclass"
+},
+"measuredWind": "measuredWind"
+},
+"children": [
+39
+],
+"context": "Krole",
+"id": 24,
+"objects": [
+"A::measuredWind"
+],
+"parents": [
+37
+]
+},
+{
+"attributes": {
+"storedRainfall": "storedRainfall"
+},
+"children": [
+39
+],
+"context": "Krole",
+"id": 23,
+"objects": [
+"RR::storedRainfall"
+],
+"parents": [
+40
+]
+},
+{
+"attributes": {
+"measuredRainfall": "measuredRainfall"
+},
+"children": [
+39
+],
+"context": "Krole",
+"id": 22,
+"objects": [
+"RG::measuredRainfall"
+],
+"parents": [
+40
+]
+},
+{
+"attributes": {
+"exist_hasTypeEnd": {
+"concepts": [
+32,
+34,
+35,
+38,
+41,
+42
+],
+"operator": "exist",
+"relation": "hasTypeEnd",
+"target": "Kclass"
+}
+},
+"children": [],
+"context": "Krole",
+"id": 39,
+"objects": [],
+"parents": [
+22,
+23,
+24
+]
+},
+{
+"attributes": {
+"print": "print"
+},
+"children": [
+27,
+28
+],
+"context": "Koperation",
+"id": 29,
+"objects": [],
+"parents": []
+},
+{
+"attributes": {
+"MC": "MC"
+},
+"children": [
+25,
+26
+],
+"context": "Koperation",
+"id": 28,
+"objects": [],
+"parents": [
+29
+]
+},
+{
+"attributes": {
+"PstoredRF": "PstoredRF"
+},
+"children": [],
+"context": "Koperation",
+"id": 27,
+"objects": [
+"RR::print"
+],
+"parents": [
+29
+]
+},
+{
+"attributes": {
+"MCWSWD": "MCWSWD"
+},
+"children": [],
+"context": "Koperation",
+"id": 26,
+"objects": [
+"W::printinfo"
+],
+"parents": [
+28
+]
+},
+{
+"attributes": {
+"MCWA": "MCWA"
+},
+"children": [],
+"context": "Koperation",
+"id": 25,
+"objects": [
+"R::printinfo"
+],
+"parents": [
+28
+]
+}
+]
